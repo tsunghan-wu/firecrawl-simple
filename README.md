@@ -2,6 +2,25 @@
 
 Crawl and convert any website into LLM-ready markdown.
 
+## Quick Start (by Patrick)
+
+1. Install the [Docker Desktop]([https://docs.docker.com/engine/install/](https://docs.docker.com/desktop/) on your system.
+2. Clone this repo and go to the `firecrawl-simple/` directory.
+3. Run `docker-compose up` and then you should be good ;) (you can search something like this on the terminal: `For the Queue UI, open: http://0.0.0.0:xxxx/admin//queues`)
+4. Launch an example script for scraping on another terminal as follows:
+
+```
+curl -X POST http://0.0.0.0:3002/v1/scrape \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "formats": ["markdown", "html"]
+    }'
+```
+
+Note: You might face some errors when running docker-compose on Mac with Apple Silicon. Please refer to [this document](https://docs.docker.com/compose/install/) to use another path to launch the program.
+
+
 ## ![](https://trieve.b-cdn.net/firecrawl-simple/loc_chart.png)
 
 <div>
